@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="sl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kmetijska zadruga Celje | Ponudba, letak in nasveti</title>
+  <meta name="description" content="Kmetijska zadruga Celje: ponudba tedna, aktualni letak, odkup mleka in živine, trgovini v Vojniku in Škofji vasi. Prijavite se na novice in prejmite letak prvi.">
+  <meta name="theme-color" content="#1f5a3a">
+  <link rel="canonical" href="https://nnejc.github.io/kz-celje-demo/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="sl_SI">
+  <meta property="og:title" content="Kmetijska zadruga Celje | Ponudba, letak in nasveti">
+  <meta property="og:description" content="Ponudba tedna, aktualni letak, odkup mleka in živine ter trgovini v Vojniku in Škofji vasi.">
+  <meta property="og:image" content="https://nnejc.github.io/kz-celje-demo/img/hero.webp">
+  <meta property="og:url" content="https://nnejc.github.io/kz-celje-demo/">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231f5a3a'/%3E%3Cpath d='M9 24c0-8 5-13 14-14-1 9-6 14-14 14z' fill='%23e0a02b'/%3E%3C/svg%3E">
+  <link rel="preload" as="image" href="img/hero.webp" fetchpriority="high">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Local business structured data. Values in [VNESI: ...] must be replaced before production. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Kmetijska zadruga Celje, z.o.o.",
+    "url": "https://www.kz-celje.si/",
+    "telephone": "+38634253800",
+    "email": "tajnistvo@kz-celje.si",
+    "logo": "https://nnejc.github.io/kz-celje-demo/img/client/logo.png",
+    "image": "https://nnejc.github.io/kz-celje-demo/img/hero.webp",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Kocbekova ulica 5",
+      "postalCode": "3000",
+      "addressLocality": "Celje",
+      "addressCountry": "SI"
+    },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "15:00"
+    }],
+    "sameAs": ["https://www.facebook.com/KZ-Celje-102216865359597"],
+    "vatID": "[VNESI: ID za DDV]"
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Preskoči na vsebino</a>
+
+  <!-- Remove this bar for production -->
+  <div class="demo-bar" role="note">Demo predlog za Kmetijsko zadrugo Celje · vsebine označene z [VNESI] so začasne</div>
+
+  <header class="site-header" id="top">
+    <div class="wrap header-row">
+      <a class="brand" href="#top" aria-label="Kmetijska zadruga Celje, domov">
+        <img src="img/client/logo.png" width="135" height="56" alt="Kmetijska zadruga Celje">
+      </a>
+
+      <nav id="nav" class="nav" aria-label="Glavni meni">
+        <ul>
+          <li><a href="#ponudba">Ponudba</a></li>
+          <li><a href="#letak">Letak</a></li>
+          <li><a href="#storitve">Storitve</a></li>
+          <li><a href="#dogodki">Dogodki</a></li>
+          <li><a href="#nasveti">Nasveti</a></li>
+          <li><a href="#prodajalne">Prodajalne</a></li>
+        </ul>
+        <a class="btn btn-amber nav-cta" href="#prijava">Prijava na novice</a>
+      </nav>
+
+      <a class="header-phone" href="tel:+38634253800"><span aria-hidden="true">☎</span> 03 425 38 00</a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">
+        <span class="sr-only">Meni</span>
+        <span class="bars" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- 2. Hero -->
+    <section class="hero">
+      <img class="hero-img" src="img/hero.webp" width="1600" height="900" alt="" fetchpriority="high">
+      <div class="hero-shade"></div>
+      <div class="wrap hero-content">
+        <p class="eyebrow">Kmetijska zadruga Celje</p>
+        <h1>Vse za vaš vrt, hlev in dom. Iz domačih krajev.</h1>
+        <p class="lead">Ponudba tedna, aktualni letak in nasveti na enem mestu. Trgovini v Vojniku in Škofji vasi, odkup mleka in živine.</p>
+        <div class="hero-actions">
+          <a class="btn btn-amber" href="#ponudba">Ponudba tedna</a>
+          <a class="btn btn-ghost" href="#prijava">Prejmi letak prvi</a>
+        </div>
+        <ul class="hero-facts">
+          <li><strong>32</strong> rejcev mleka</li>
+          <li><strong>5000+</strong> kosov živine na leto</li>
+          <li><strong>2</strong> trgovini</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 3. Featured products (data/products.json) -->
+    <section class="section" id="ponudba" aria-labelledby="h-ponudba">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Izpostavljeno</p>
+          <h2 id="h-ponudba">Izpostavljeno ta teden</h2>
+          <p class="section-sub">Izbrani izdelki iz naših trgovin. Cene in zaloga se lahko razlikujejo po trgovinah.</p>
+        </div>
+        <div class="grid grid-products" id="products" aria-live="polite"><p class="loading">Nalagam ponudbo …</p></div>
+      </div>
+    </section>
+
+    <!-- 4. Flyer (data/leaflets.json) -->
+    <section class="section section-cream" id="letak" aria-labelledby="h-letak">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Letak</p>
+          <h2 id="h-letak">Aktualni letak</h2>
+          <p class="section-sub" id="leafletValidity"></p>
+        </div>
+        <div class="flyer">
+          <div class="flyer-viewer">
+            <div class="flyer-stage">
+              <button class="flyer-nav prev" id="flyerPrev" aria-label="Prejšnja stran">‹</button>
+              <img id="flyerImg" src="" alt="" width="700" height="990">
+              <button class="flyer-nav next" id="flyerNext" aria-label="Naslednja stran">›</button>
+            </div>
+            <p class="flyer-count" id="flyerCount" aria-live="polite"></p>
+            <div class="flyer-thumbs" id="flyerThumbs"></div>
+          </div>
+          <aside class="flyer-side">
+            <h3>Letak v telefonu</h3>
+            <p>Prelistajte stran ali odprite celoten letak v PDF obliki. Nov letak lahko prejmete prvi na e-pošto ali SMS.</p>
+            <div class="flyer-actions">
+              <a class="btn btn-green" id="flyerPdf" href="#" target="_blank" rel="noopener">Odpri PDF</a>
+              <a class="btn btn-outline" href="#prijava">Prejmi naslednji letak</a>
+            </div>
+            <h3 class="archive-title">Arhiv letakov</h3>
+            <ul class="archive" id="archive"></ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Services -->
+    <section class="section" id="storitve" aria-labelledby="h-storitve">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Kaj še delamo</p>
+          <h2 id="h-storitve">Storitve zadruge</h2>
+          <p class="section-sub">Zadruga ni le trgovina. Odkupujemo mleko in živino, pridelujemo hmelj in upravljamo trgovski center.</p>
+        </div>
+        <div class="grid grid-services">
+          <article class="card service">
+            <img src="img/client/mleko.webp" width="400" height="400" loading="lazy" alt="Odkup mleka">
+            <div class="card-body">
+              <h3>Odkup mleka</h3>
+              <p>Kakovostno kravje mleko odkupujemo od 32 proizvajalcev iz okolice Celja, skupaj okoli 3 milijone litrov na leto.</p>
+              <a class="link" href="tel:+38641785412">Vodja odkupa: 041 785 412</a>
+            </div>
+          </article>
+          <article class="card service">
+            <img src="img/client/krave.webp" width="400" height="400" loading="lazy" alt="Odkup živine">
+            <div class="card-body">
+              <h3>Odkup živine</h3>
+              <p>Mlado pitano govedo, krave, teleta in prašiči. Letno odkupimo več kot 5000 kosov od naših kooperantov.</p>
+              <a class="link" href="tel:+38641626472">Marijan Jezernik: 041 626 472</a>
+            </div>
+          </article>
+          <article class="card service">
+            <img src="img/client/hmelj.webp" width="400" height="400" loading="lazy" alt="Hmelj">
+            <div class="card-body">
+              <h3>Pridelava in prodaja hmelja</h3>
+              <p>Hmelj, zeleno zlato Savinjske doline. Pridelujemo ga tudi v okolici Celja.</p>
+              <a class="link" href="tel:+38641785412">Informacije: 041 785 412</a>
+            </div>
+          </article>
+          <article class="card service">
+            <img src="img/client/vojnik.webp" width="300" height="300" loading="lazy" alt="Trgovsko-poslovni center Vojnik">
+            <div class="card-body">
+              <h3>Trgovsko-poslovni center Vojnik</h3>
+              <p>Odprt leta 2006. Pošta, banka, optika, vrtec, zdravnik in naša največja trgovina Kmetijska preskrba Vojnik.</p>
+              <a class="link" href="#prodajalne">Poglejte trgovino</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Events (data/events.json) -->
+    <section class="section section-green" id="dogodki" aria-labelledby="h-dogodki">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Koledar</p>
+          <h2 id="h-dogodki">Prihajajoči dogodki</h2>
+        </div>
+        <div class="grid grid-events" id="events" aria-live="polite"><p class="loading">Nalagam dogodke …</p></div>
+      </div>
+    </section>
+
+    <!-- 7. Tips and news (data/tips.json) -->
+    <section class="section" id="nasveti" aria-labelledby="h-nasveti">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Iz e-novic</p>
+          <h2 id="h-nasveti">Nasveti in novice</h2>
+        </div>
+        <div class="grid grid-tips" id="tips" aria-live="polite"><p class="loading">Nalagam članke …</p></div>
+      </div>
+    </section>
+
+    <!-- 8. Newsletter signup -->
+    <section class="section section-signup" id="prijava" aria-labelledby="h-prijava">
+      <div class="wrap signup">
+        <div class="signup-copy">
+          <p class="eyebrow">Novice in letak</p>
+          <h2 id="h-prijava">Letak in akcije prvi v nabiralnik</h2>
+          <p>Prijavite se na e-pošto, po želji tudi na SMS. Pošiljamo le aktualne ponudbe, nasvete in vabila na dogodke. Odjava je mogoča kadar koli.</p>
+          <ul class="ticks">
+            <li>Aktualni letak pred vsemi</li>
+            <li>Ponudba tedna v nekaj vrsticah</li>
+            <li>Brez nepotrebnih sporočil</li>
+          </ul>
+        </div>
+
+        <form class="form" id="signupForm" novalidate>
+          <!-- Demo only: no data leaves the browser.
+               Production: post to Brevo / Mailchimp (form action or API via a serverless function),
+               and store the consent timestamp + text version for each channel. -->
+          <div class="field">
+            <label for="name">Ime <span class="opt">(neobvezno)</span></label>
+            <input id="name" name="name" type="text" autocomplete="given-name">
+          </div>
+          <div class="field">
+            <label for="email">E-pošta <span class="req" aria-hidden="true">*</span></label>
+            <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="emailErr">
+            <p class="err" id="emailErr" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="phone">Telefon za SMS <span class="opt">(neobvezno)</span></label>
+            <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="041 123 456" aria-describedby="phoneErr">
+            <p class="err" id="phoneErr" role="alert"></p>
+          </div>
+
+          <div class="check">
+            <input id="consentEmail" name="consentEmail" type="checkbox" required aria-describedby="consentEmailErr">
+            <label for="consentEmail">Dovoljujem, da me Kmetijska zadruga Celje obvešča o ponudbi in dogodkih po e-pošti. Soglasje lahko kadar koli prekličem.</label>
+          </div>
+          <p class="err" id="consentEmailErr" role="alert"></p>
+
+          <div class="check">
+            <input id="consentSms" name="consentSms" type="checkbox" aria-describedby="consentSmsErr">
+            <label for="consentSms">Dovoljujem tudi obveščanje po SMS (obvezno le, če vpišem telefonsko številko). Soglasje lahko kadar koli prekličem.</label>
+          </div>
+          <p class="err" id="consentSmsErr" role="alert"></p>
+
+          <button class="btn btn-amber btn-block" type="submit">Prijavi me</button>
+          <p class="form-note">Podatke obdelujemo skladno s <a href="https://www.kz-celje.si/index/pogoji_uporabe" target="_blank" rel="noopener">pravilnikom o zasebnosti</a>.</p>
+          <p class="success" id="formSuccess" role="status" hidden>Hvala! Prijava je prejeta. (Demo: podatki se nikamor ne pošiljajo.)</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- 9. Stores (data/stores.json) -->
+    <section class="section" id="prodajalne" aria-labelledby="h-prodajalne">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Obiščite nas</p>
+          <h2 id="h-prodajalne">Prodajalne in kontakti</h2>
+        </div>
+        <div class="grid grid-stores" id="stores" aria-live="polite"><p class="loading">Nalagam prodajalne …</p></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 10. Footer -->
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <img class="footer-logo" src="img/client/logo.png" width="135" height="56" loading="lazy" alt="Kmetijska zadruga Celje">
+        <p>Kmetijska zadruga Celje, z.o.o.<br>Kocbekova ulica 5, 3000 Celje</p>
+      </div>
+      <div>
+        <h2 class="foot-h">Kontakt</h2>
+        <p><a href="tel:+38634253800">03 425 38 00</a><br><a href="mailto:tajnistvo@kz-celje.si">tajnistvo@kz-celje.si</a></p>
+      </div>
+      <div>
+        <h2 class="foot-h">Sledite nam</h2>
+        <p><a href="https://www.facebook.com/KZ-Celje-102216865359597" target="_blank" rel="noopener">Facebook: KZ-Celje</a></p>
+        <p><a href="https://www.kz-celje.si/index/pogoji_uporabe" target="_blank" rel="noopener">Pravilnik o zasebnosti</a></p>
+      </div>
+    </div>
+    <div class="wrap footer-eu">
+      <p>Naložbo v izdelavo spletne strani sofinancirata Republika Slovenija in Evropska unija iz Evropskega sklada za regionalni razvoj. <span class="muted">[VNESI: preveri obvezno besedilo in logotipe za novo stran]</span></p>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
