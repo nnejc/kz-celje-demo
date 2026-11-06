@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Kmetijska preskrba Vojnik",
+    "note": "Naša največja trgovina v Trgovsko-poslovnem centru Vojnik",
+    "address": "Celjska cesta 24, 3212 Vojnik",
+    "phones": ["041 427 537", "03 780 48 50"],
+    "hours": [
+      { "days": "Ponedeljek – petek", "time": "07:00 – 19:00" },
+      { "days": "Sobota", "time": "07:00 – 13:00" }
+    ],
+    "map": "https://maps.google.com/?q=Celjska+cesta+24,3212+Vojnik",
+    "range": ["Poljščine", "Krmila", "Semena in sadike", "Varstvo rastlin", "Agrotehnika", "Mesarstvo", "Kletarstvo", "Domače dobrote"]
+  },
+  {
+    "name": "Agrocenter Škofja vas",
+    "note": "Trgovina za kmete in vrtičkarje",
+    "address": "Škofja vas 46b, 3211 Škofja vas",
+    "phones": ["041 427 551", "03 541 57 11"],
+    "hours": [
+      { "days": "Ponedeljek – petek", "time": "07:30 – 16:00" },
+      { "days": "Sobota", "time": "07:30 – 12:00" }
+    ],
+    "map": "https://maps.google.com/?q=%C5%A0kofja+vas+46b,3211+%C5%A0kofja+vas",
+    "range": ["Poljščine", "Semena in sadike", "Krmila", "Varstvo rastlin", "Agrotehnika"]
+  },
+  {
+    "name": "Uprava KZ Celje",
+    "note": "Sedež zadruge in odkup (ni trgovina)",
+    "address": "Kocbekova ulica 5, 3000 Celje",
+    "phones": ["03 425 38 00"],
+    "hours": [
+      { "days": "Ponedeljek – petek", "time": "08:00 – 15:00" }
+    ],
+    "map": "https://maps.google.com/?q=Kocbekova+ulica+5,3000+Celje",
+    "range": []
+  }
+]

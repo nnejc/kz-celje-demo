@@ -1,0 +1,25 @@
+{
+  "current": {
+    "title": "Aktualni letak",
+    "validity": "[VNESI: veljavnost, npr. 6. 11. – 20. 11. 2026]",
+    "pdf": null,
+    "demo": true,
+    "pages": [
+      { "src": "img/letak-1.webp", "alt": "Aktualni letak, stran 1 (primer)" },
+      { "src": "img/letak-2.webp", "alt": "Aktualni letak, stran 2 (primer)" },
+      { "src": "img/letak-3.webp", "alt": "Aktualni letak, stran 3 (primer)" }
+    ]
+  },
+  "archive": [
+    {
+      "title": "Jesenska ponudba",
+      "date": "2021",
+      "pdf": "https://www.kz-celje.si/h/novice/pdf/jesenska_ponudba_V3.pdf"
+    },
+    {
+      "title": "[VNESI: naslov starejšega letaka]",
+      "date": "[VNESI: datum]",
+      "pdf": null
+    }
+  ]
+}

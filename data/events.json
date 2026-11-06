@@ -1,0 +1,26 @@
+[
+  {
+    "date": "2026-11-28",
+    "time": "[VNESI: ura]",
+    "title": "Primer: predavanje o zimski oskrbi sadnega drevja",
+    "place": "[VNESI: lokacija]",
+    "description": "Vzorčni vnos za prikaz. Dogodke boste dodali z enim vnosom v datoteki events.json.",
+    "demo": true
+  },
+  {
+    "date": "2026-12-12",
+    "time": "[VNESI: ura]",
+    "title": "Primer: predpraznični dan z domačimi dobrotami",
+    "place": "Kmetijska preskrba Vojnik",
+    "description": "Vzorčni vnos za prikaz. Datum, ura in opis so zgolj primer.",
+    "demo": true
+  },
+  {
+    "date": "2027-01-16",
+    "time": "[VNESI: ura]",
+    "title": "Primer: posvet za rejce govedi",
+    "place": "[VNESI: lokacija]",
+    "description": "Vzorčni vnos za prikaz. Zamenjajte z resničnim dogodkom.",
+    "demo": true
+  }
+]
