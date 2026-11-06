@@ -1,10 +1,9 @@
-[
+﻿[
   {
     "id": "sadike-drevje",
     "name": "Sadike sadnega drevja in jagodičevja",
     "category": "Semena in sadike",
     "description": "Pestra ponudba sadik sadnega drevja in jagodičevja v Kmetijski preskrbi Vojnik.",
-    "image": "img/cat-vrt.webp",
     "price": null,
     "priceNote": "[VNESI: cena]",
     "store": "Kmetijska preskrba Vojnik",
@@ -15,7 +14,6 @@
     "name": "Mineralna gnojila UREA, KAN, NPK",
     "category": "Nega, oskrba in varstvo rastlin",
     "description": "Na zalogi. Ne odlašajte z nakupom.",
-    "image": "img/cat-krma.webp",
     "price": null,
     "priceNote": "[VNESI: cena]",
     "store": "Vojnik in Škofja vas",
@@ -26,7 +24,6 @@
     "name": "Gozdarska oprema",
     "category": "Agrotehnika",
     "description": "Sekire, cepilniki, verige, zagozde, rokavice in ostalo orodje za spravilo lesa.",
-    "image": "img/cat-orodje.webp",
     "price": null,
     "priceNote": "[VNESI: cena]",
     "store": "Naše trgovine",
@@ -37,10 +34,10 @@
     "name": "Bukova drva",
     "category": "Drugo",
     "description": "Drva za kurjavo. [VNESI: dobavni rok in oblika]",
-    "image": "img/cat-domace.webp",
     "price": null,
     "priceNote": "[VNESI: cena]",
     "store": "[VNESI: trgovina]",
     "badge": null
   }
 ]
+

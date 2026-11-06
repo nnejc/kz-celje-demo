@@ -1,4 +1,4 @@
-# KZ Celje: website demo
+﻿# KZ Celje: website demo
 
 Static demo for Kmetijska zadruga Celje (https://www.kz-celje.si/). Plain HTML, CSS and vanilla JS, no build step, no trackers, no cookies.
 Visible text is Slovenian. Anything marked `[VNESI: ...]` is a placeholder that must be replaced with real client data.
@@ -31,9 +31,7 @@ The JSON files are a stand-in for a CMS. Edit one entry, save, redeploy.
 
 ## Images
 
-Placeholders use the final file names, so you can overwrite them without touching code:
-`hero.webp` (1600x900), `cat-vrt.webp`, `cat-krma.webp`, `cat-orodje.webp`, `cat-domace.webp` (800x600), `tip-1..3.webp` (800x500), `letak-1..3.webp` (700x990).
-Only AI images for atmosphere; never present them as the client's real products or people.
+Flyer pages are placeholders (`letak-1..3.webp`, 700x990): overwrite them with the real flyer. The design is deliberately plain; add real photos of the stores and products when available, and use AI images sparingly and never as the client's real products or people.
 
 ## Signup form
 
@@ -56,3 +54,4 @@ Open http://localhost:8099/ (needed because the page fetches the JSON files).
 ## Before production
 
 Remove the `.demo-bar` element in `index.html`, fill all `[VNESI: ...]` values (also in the JSON-LD), update canonical and Open Graph URLs, keep the EU co-financing notice in the footer, and add the real privacy policy link.
+

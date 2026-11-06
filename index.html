@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="sl">
 <head>
   <meta charset="utf-8">
@@ -11,10 +11,9 @@
   <meta property="og:locale" content="sl_SI">
   <meta property="og:title" content="Kmetijska zadruga Celje | Ponudba, letak in nasveti">
   <meta property="og:description" content="Ponudba tedna, aktualni letak, odkup mleka in živine ter trgovini v Vojniku in Škofji vasi.">
-  <meta property="og:image" content="https://nnejc.github.io/kz-celje-demo/img/hero.webp">
+  <meta property="og:image" content="https://nnejc.github.io/kz-celje-demo/img/client/logo.png">
   <meta property="og:url" content="https://nnejc.github.io/kz-celje-demo/">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231f5a3a'/%3E%3Cpath d='M9 24c0-8 5-13 14-14-1 9-6 14-14 14z' fill='%23e0a02b'/%3E%3C/svg%3E">
-  <link rel="preload" as="image" href="img/hero.webp" fetchpriority="high">
   <link rel="stylesheet" href="css/style.css">
 
   <!-- Local business structured data. Values in [VNESI: ...] must be replaced before production. -->
@@ -27,7 +26,7 @@
     "telephone": "+38634253800",
     "email": "tajnistvo@kz-celje.si",
     "logo": "https://nnejc.github.io/kz-celje-demo/img/client/logo.png",
-    "image": "https://nnejc.github.io/kz-celje-demo/img/hero.webp",
+    "image": "https://nnejc.github.io/kz-celje-demo/img/client/logo.png",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Kocbekova ulica 5",
@@ -81,21 +80,16 @@
   <main id="main">
     <!-- 2. Hero -->
     <section class="hero">
-      <img class="hero-img" src="img/hero.webp" width="1600" height="900" alt="" fetchpriority="high">
-      <div class="hero-shade"></div>
-      <div class="wrap hero-content">
-        <p class="eyebrow">Kmetijska zadruga Celje</p>
-        <h1>Vse za vaš vrt, hlev in dom. Iz domačih krajev.</h1>
-        <p class="lead">Ponudba tedna, aktualni letak in nasveti na enem mestu. Trgovini v Vojniku in Škofji vasi, odkup mleka in živine.</p>
-        <div class="hero-actions">
-          <a class="btn btn-amber" href="#ponudba">Ponudba tedna</a>
-          <a class="btn btn-ghost" href="#prijava">Prejmi letak prvi</a>
+      <div class="wrap hero-grid">
+        <div>
+          <h1>Trgovina, odkup in nasveti za kmete iz celjske okolice</h1>
+          <p class="lead">Aktualna ponudba, letak in odpiralni časi na enem mestu. Pokličete nas lahko na 03 425 38 00.</p>
+          <div class="hero-actions">
+            <a class="btn btn-amber" href="#ponudba">Ponudba tedna</a>
+            <a class="btn btn-ghost" href="#prijava">Prejmi letak prvi</a>
+          </div>
         </div>
-        <ul class="hero-facts">
-          <li><strong>32</strong> rejcev mleka</li>
-          <li><strong>5000+</strong> kosov živine na leto</li>
-          <li><strong>2</strong> trgovini</li>
-        </ul>
+        <div class="today" id="today" aria-live="polite"></div>
       </div>
     </section>
 
@@ -103,7 +97,6 @@
     <section class="section" id="ponudba" aria-labelledby="h-ponudba">
       <div class="wrap">
         <div class="section-head">
-          <p class="eyebrow">Izpostavljeno</p>
           <h2 id="h-ponudba">Izpostavljeno ta teden</h2>
           <p class="section-sub">Izbrani izdelki iz naših trgovin. Cene in zaloga se lahko razlikujejo po trgovinah.</p>
         </div>
@@ -115,7 +108,6 @@
     <section class="section section-cream" id="letak" aria-labelledby="h-letak">
       <div class="wrap">
         <div class="section-head">
-          <p class="eyebrow">Letak</p>
           <h2 id="h-letak">Aktualni letak</h2>
           <p class="section-sub" id="leafletValidity"></p>
         </div>
@@ -147,7 +139,6 @@
     <section class="section" id="storitve" aria-labelledby="h-storitve">
       <div class="wrap">
         <div class="section-head">
-          <p class="eyebrow">Kaj še delamo</p>
           <h2 id="h-storitve">Storitve zadruge</h2>
           <p class="section-sub">Zadruga ni le trgovina. Odkupujemo mleko in živino, pridelujemo hmelj in upravljamo trgovski center.</p>
         </div>
@@ -192,7 +183,6 @@
     <section class="section section-green" id="dogodki" aria-labelledby="h-dogodki">
       <div class="wrap">
         <div class="section-head">
-          <p class="eyebrow">Koledar</p>
           <h2 id="h-dogodki">Prihajajoči dogodki</h2>
         </div>
         <div class="grid grid-events" id="events" aria-live="polite"><p class="loading">Nalagam dogodke …</p></div>
@@ -203,7 +193,6 @@
     <section class="section" id="nasveti" aria-labelledby="h-nasveti">
       <div class="wrap">
         <div class="section-head">
-          <p class="eyebrow">Iz e-novic</p>
           <h2 id="h-nasveti">Nasveti in novice</h2>
         </div>
         <div class="grid grid-tips" id="tips" aria-live="polite"><p class="loading">Nalagam članke …</p></div>
@@ -214,7 +203,6 @@
     <section class="section section-signup" id="prijava" aria-labelledby="h-prijava">
       <div class="wrap signup">
         <div class="signup-copy">
-          <p class="eyebrow">Novice in letak</p>
           <h2 id="h-prijava">Letak in akcije prvi v nabiralnik</h2>
           <p>Prijavite se na e-pošto, po želji tudi na SMS. Pošiljamo le aktualne ponudbe, nasvete in vabila na dogodke. Odjava je mogoča kadar koli.</p>
           <ul class="ticks">
@@ -266,7 +254,6 @@
     <section class="section" id="prodajalne" aria-labelledby="h-prodajalne">
       <div class="wrap">
         <div class="section-head">
-          <p class="eyebrow">Obiščite nas</p>
           <h2 id="h-prodajalne">Prodajalne in kontakti</h2>
         </div>
         <div class="grid grid-stores" id="stores" aria-live="polite"><p class="loading">Nalagam prodajalne …</p></div>
@@ -299,3 +286,5 @@
   <script src="js/main.js" defer></script>
 </body>
 </html>
+
+

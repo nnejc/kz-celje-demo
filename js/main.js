@@ -1,4 +1,4 @@
-/* KZ Celje demo: renders sections from /data/*.json with vanilla JS. */
+﻿/* KZ Celje demo: renders sections from /data/*.json with vanilla JS. */
 (function () {
   "use strict";
 
@@ -35,7 +35,7 @@
       var price = p.price != null ? Number(p.price).toFixed(2).replace(".", ",") + " €" : p.priceNote || "Cena v trgovini";
       return '<article class="card product">' +
         (p.badge ? '<span class="badge">' + esc(p.badge) + "</span>" : "") +
-        '<img src="' + esc(p.image) + '" width="800" height="600" loading="lazy" alt="">' +
+        
         '<div class="card-body"><p class="cat">' + esc(p.category) + "</p><h3>" + esc(p.name) + "</h3>" +
         "<p>" + esc(p.description) + "</p>" +
         '<div class="meta"><span class="price">' + esc(price) + "</span><span>" + esc(p.store) + "</span></div></div></article>";
@@ -94,7 +94,7 @@
     $("events").innerHTML = list.map(function (e) {
       var d = new Date(e.date + "T12:00:00");
       return '<article class="event"><div class="event-date"><span class="day">' + d.getDate() + '</span><span class="mon">' + MONTHS[d.getMonth()] + "</span></div><div>" +
-        (e.demo ? '<span class="tag-demo">Primer</span>' : "") +
+        (e.demo ? '<span class="tag-demo">(primer)</span>' : "") +
         "<h3>" + esc(e.title) + "</h3><p>" + esc(e.time) + " · " + esc(e.place) + "</p><p>" + esc(e.description) + "</p></div></article>";
     }).join("");
   }
@@ -104,9 +104,9 @@
     $("tips").innerHTML = items.slice(0, 3).map(function (t) {
       var d = new Date(t.date + "T12:00:00");
       var date = d.getDate() + ". " + (d.getMonth() + 1) + ". " + d.getFullYear();
-      return '<article class="card tip"><img src="' + esc(t.image) + '" width="800" height="500" loading="lazy" alt="">' +
+      return '<article class="card tip">' +
         '<div class="card-body"><span class="tag">' + esc(t.tag) + '</span><time datetime="' + esc(t.date) + '">' + date + "</time>" +
-        '<h3 style="margin-top:.4em">' + esc(t.title) + "</h3><p>" + esc(t.excerpt) + "</p>" +
+        '<h3>' + esc(t.title) + "</h3><p>" + esc(t.excerpt) + "</p>" +
         '<a class="link" href="' + esc(t.url) + '" target="_blank" rel="noopener">Preberi več</a></div></article>';
     }).join("");
   }
@@ -135,12 +135,23 @@
     }).join("");
   }
 
+  /* ---------- Hero panel: stores open today ---------- */
+  function renderToday(items) {
+    var shops = items.filter(function (s) { return s.range && s.range.length; });
+    $("today").innerHTML = "<h2>Prodajalni danes</h2>" + shops.map(function (s) {
+      var d = new Date().getDay(), key = d === 0 ? "Nedelja" : d === 6 ? "Sobota" : "Ponedeljek – petek";
+      var h = s.hours.filter(function (x) { return x.days === key; })[0];
+      var open = isOpen(s.hours);
+      return '<div class="today-row"><div><strong>' + esc(s.name) + "</strong><span>" + (h ? esc(h.time) : "danes zaprto") + '</span></div><span class="open-now ' + (open ? "yes" : "no") + '">' + (open ? "odprto" : "zaprto") + "</span></div>";
+    }).join("") + '<a class="link" href="#prodajalne">Naslovi in telefoni</a>';
+  }
+
   /* ---------- Load data ---------- */
   load("products.json").then(renderProducts).catch(function () { fail($("products"), "Ponudbe trenutno ni mogoče naložiti."); });
   load("leaflets.json").then(renderLeaflets).catch(function () { fail($("flyerThumbs"), "Letaka trenutno ni mogoče naložiti."); });
   load("events.json").then(renderEvents).catch(function () { fail($("events"), "Dogodkov trenutno ni mogoče naložiti."); });
   load("tips.json").then(renderTips).catch(function () { fail($("tips"), "Člankov trenutno ni mogoče naložiti."); });
-  load("stores.json").then(renderStores).catch(function () { fail($("stores"), "Prodajaln trenutno ni mogoče naložiti."); });
+  load("stores.json").then(function (s) { renderStores(s); renderToday(s); }).catch(function () { fail($("stores"), "Prodajaln trenutno ni mogoče naložiti."); });
 
   /* ---------- Signup form (front-end only) ---------- */
   var form = $("signupForm");
@@ -169,3 +180,4 @@
     $("formSuccess").hidden = false;
   });
 })();
+
