@@ -1,6 +1,7 @@
 ﻿[
   {
     "id": "sadike-drevje",
+    "image": "img/letak/sadike.webp",
     "name": "Sadike sadnega drevja in jagodičevja",
     "category": "Semena in sadike",
     "description": "Pestra ponudba sadik sadnega drevja in jagodičevja v Kmetijski preskrbi Vojnik.",
@@ -11,6 +12,7 @@
   },
   {
     "id": "mineralna-gnojila",
+    "image": "img/letak/gnojila.webp",
     "name": "Mineralna gnojila UREA, KAN, NPK",
     "category": "Nega, oskrba in varstvo rastlin",
     "description": "Na zalogi. Ne odlašajte z nakupom.",
@@ -21,6 +23,7 @@
   },
   {
     "id": "gozdarska-oprema",
+    "image": "img/letak/gozdarska.webp",
     "name": "Gozdarska oprema",
     "category": "Agrotehnika",
     "description": "Sekire, cepilniki, verige, zagozde, rokavice in ostalo orodje za spravilo lesa.",
@@ -31,6 +34,7 @@
   },
   {
     "id": "bukova-drva",
+    "image": "img/letak/drva.webp",
     "name": "Bukova drva",
     "category": "Drugo",
     "description": "Drva za kurjavo. [VNESI: dobavni rok in oblika]",
@@ -40,4 +44,5 @@
     "badge": null
   }
 ]
+
 

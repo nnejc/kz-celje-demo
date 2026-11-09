@@ -34,6 +34,7 @@
     $("products").innerHTML = items.map(function (p) {
       var price = p.price != null ? Number(p.price).toFixed(2).replace(".", ",") + " €" : p.priceNote || "Cena v trgovini";
       return '<article class="card product">' +
+        (p.image ? '<img src="' + esc(p.image) + '" width="1000" height="700" loading="lazy" alt="' + esc(p.name) + '">' : "") +
         (p.badge ? '<span class="badge">' + esc(p.badge) + "</span>" : "") +
         
         '<div class="card-body"><p class="cat">' + esc(p.category) + "</p><h3>" + esc(p.name) + "</h3>" +
@@ -180,4 +181,5 @@
     $("formSuccess").hidden = false;
   });
 })();
+
 
