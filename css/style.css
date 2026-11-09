@@ -273,3 +273,9 @@ h1, h2, h3 { font-weight: 700; letter-spacing: -.01em; }
 
 .product img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 2px 2px 0 0; }
 .product .badge { margin: 12px 0 0 16px; }
+
+/* Taller hero so more of the photo is visible */
+.hero { min-height: min(82vh, 760px); display: flex; align-items: center; }
+.hero-grid { width: 100%; padding-top: 72px; padding-bottom: 72px; }
+.hero-img { object-position: 60% 70%; }
+@media (min-width: 900px) { .hero-grid { padding-top: 120px; padding-bottom: 120px; } .hero { min-height: min(86vh, 820px); } }
