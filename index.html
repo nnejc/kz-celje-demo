@@ -14,6 +14,7 @@
   <meta property="og:image" content="https://nnejc.github.io/kz-celje-demo/img/client/logo.png">
   <meta property="og:url" content="https://nnejc.github.io/kz-celje-demo/">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231f5a3a'/%3E%3Cpath d='M9 24c0-8 5-13 14-14-1 9-6 14-14 14z' fill='%23e0a02b'/%3E%3C/svg%3E">
+  <link rel="preload" as="image" href="img/hero.webp" fetchpriority="high">
   <link rel="stylesheet" href="css/style.css">
 
   <!-- Local business structured data. Values in [VNESI: ...] must be replaced before production. -->
@@ -80,6 +81,8 @@
   <main id="main">
     <!-- 2. Hero -->
     <section class="hero">
+      <img class="hero-img" src="img/hero.webp" width="1600" height="900" alt="" fetchpriority="high">
+      <div class="hero-shade"></div>
       <div class="wrap hero-grid">
         <div>
           <h1>Trgovina, odkup in nasveti za kmete iz celjske okolice</h1>
@@ -286,5 +289,6 @@
   <script src="js/main.js" defer></script>
 </body>
 </html>
+
 
 
