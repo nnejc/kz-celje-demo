@@ -1,0 +1,196 @@
+﻿<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<title>Letak KZ Celje (vzorec)</title>
+<style>
+  @page { size: A4; margin: 0; }
+  :root { --green: #1f5a3a; --dark: #143d27; --cream: #faf5e9; --cream2: #f1e9d3; --amber: #e0a02b; --ink: #23302a; --muted: #5d6b63; }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { background: #888; }
+  body { font-family: "Segoe UI", system-ui, Arial, sans-serif; color: var(--ink); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .page { width: 210mm; height: 297mm; background: var(--cream); position: relative; overflow: hidden; page-break-after: always; margin: 0 auto; }
+  .page:last-child { page-break-after: auto; }
+  .top { height: 22mm; background: var(--green); display: flex; align-items: center; justify-content: space-between; padding: 0 12mm; color: #fff; }
+  .top img { height: 14mm; background: #fff; padding: 1.5mm 3mm; border-radius: 1.5mm; }
+  .top span { font-weight: 700; font-size: 11pt; }
+  .foot { position: absolute; left: 0; right: 0; bottom: 0; height: 14mm; background: var(--dark); color: #d9e6dc; font-size: 8.5pt; display: flex; align-items: center; justify-content: space-between; padding: 0 12mm; }
+  .foot b { color: #f3c969; }
+  h1, h2, h3 { color: var(--dark); line-height: 1.1; }
+  .price { display: inline-block; background: var(--amber); color: #1d1405; font-weight: 800; font-size: 15pt; padding: 1.5mm 4mm; border-radius: 1.5mm; }
+  .price small { font-weight: 600; font-size: 8pt; }
+  .tagline { font-size: 8.5pt; color: var(--muted); margin-top: 2mm; }
+  .note { font-size: 7.5pt; color: var(--muted); }
+
+  /* page 1 */
+  .cover { position: relative; height: 112mm; }
+  .cover img { width: 100%; height: 100%; object-fit: cover; object-position: 60% center; }
+  .cover::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(14,40,26,.85), rgba(14,40,26,.2) 70%); }
+  .cover .t { position: absolute; z-index: 2; left: 12mm; bottom: 14mm; color: #fff; max-width: 120mm; }
+  .cover h1 { color: #fff; font-size: 40pt; margin-bottom: 4mm; }
+  .cover p { font-size: 13pt; }
+  .valid { display: inline-block; margin-top: 5mm; background: var(--amber); color: #1d1405; font-weight: 700; padding: 1.5mm 4mm; border-radius: 1.5mm; font-size: 10.5pt; }
+  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8mm; padding: 8mm 12mm 0; }
+  .item { background: #fff; border: .3mm solid #e3dbc4; border-radius: 2mm; overflow: hidden; display: flex; flex-direction: column; }
+  .item img { width: 100%; object-fit: cover; display: block; }
+  .item .b { padding: 4mm 4.5mm 5mm; display: flex; flex-direction: column; flex: 1; }
+  .item .cat { font-size: 8pt; font-weight: 700; color: #82560a; }
+  .item h3 { font-size: 14pt; margin: 1mm 0 2mm; }
+  .item p { font-size: 9.5pt; color: var(--muted); margin-bottom: 3mm; }
+  .item .buy { margin-top: auto; display: flex; justify-content: space-between; align-items: center; gap: 3mm; font-size: 8.5pt; }
+  .p1 .item img { height: 70mm; }
+
+  /* page 2 */
+  .p2 .wrap { padding: 10mm 12mm 0; display: grid; gap: 8mm; }
+  .p2 h2 { font-size: 22pt; }
+  .big { display: grid; grid-template-columns: 1.15fr 1fr; }
+  .big img { height: 100%; min-height: 100mm; }
+  .big .b { padding: 8mm; }
+  .big h3 { font-size: 20pt; }
+  .big p { font-size: 11pt; }
+  .tags { display: flex; gap: 2mm; flex-wrap: wrap; margin: 2mm 0 4mm; }
+  .tags span { background: var(--cream2); border-radius: 1mm; font-size: 9.5pt; padding: 1mm 3mm; font-weight: 600; }
+  .p2 .row2 { padding: 0; }
+  .p2 .item img { height: 82mm; }
+
+  /* page 3 */
+  .p3 .wrap { padding: 10mm 12mm 0; }
+  .p3 h2 { font-size: 22pt; margin-bottom: 6mm; }
+  .p3 .row2 { padding: 0; }
+  .p3 .item img { height: 80mm; }
+  .stores { margin-top: 12mm; display: grid; grid-template-columns: 1fr 1fr; gap: 8mm; }
+  .store { background: var(--green); color: #fff; border-radius: 2mm; padding: 6mm; }
+  .store h3 { color: #fff; font-size: 13pt; margin-bottom: 2mm; }
+  .store p { font-size: 10pt; line-height: 1.45; }
+  .store b { color: #f3c969; }
+  .signup { margin-top: 10mm; border: .5mm dashed var(--green); border-radius: 2mm; padding: 6mm; display: flex; justify-content: space-between; align-items: center; gap: 6mm; }
+  .signup h3 { font-size: 15pt; margin-bottom: 1mm; }
+  .signup p { font-size: 10pt; color: var(--muted); }
+  .signup .url { font-weight: 800; color: var(--green); font-size: 11pt; white-space: nowrap; }
+</style>
+</head>
+<body>
+
+<!-- Page 1: cover + featured -->
+<section class="page p1">
+  <div class="top"><img src="../img/client/logo.png" alt="Kmetijska zadruga Celje"><span>Aktualni letak · vzorec</span></div>
+  <div class="cover">
+    <img src="assets/hero.jpg" alt="">
+    <div class="t">
+      <h1>Jesenska ponudba</h1>
+      <p>Sadike, zelenjava z domačih njiv, gnojila, drva in orodje v naših trgovinah.</p>
+      <span class="valid">Velja: [VNESI: datum od – do]</span>
+    </div>
+  </div>
+  <div class="row2">
+    <article class="item">
+      <img src="assets/sadike.jpg" alt="Sadike sadnega drevja in jagodičevja">
+      <div class="b">
+        <span class="cat">Semena in sadike</span>
+        <h3>Sadike sadnega drevja in jagodičevja</h3>
+        <p>Pestra ponudba sadik v Kmetijski preskrbi Vojnik.</p>
+        <div class="buy"><span class="price">XX,XX <small>€</small></span><span>Vojnik</span></div>
+      </div>
+    </article>
+    <article class="item">
+      <img src="assets/zelenjava.jpg" alt="Domača zelenjava">
+      <div class="b">
+        <span class="cat">Dobrote z domačih kmetij</span>
+        <h3>Domača zelenjava</h3>
+        <p>Korenje, čebula, česen, krompir in stročji fižol.</p>
+        <div class="buy"><span class="price">XX,XX <small>€/kg</small></span><span>Vojnik</span></div>
+      </div>
+    </article>
+  </div>
+  <div class="foot"><span>Kmetijska zadruga Celje · <b>03 425 38 00</b></span><span>Vzorčni letak: izdelki in cene so primer</span></div>
+</section>
+
+<!-- Page 2 -->
+<section class="page p2">
+  <div class="top"><img src="../img/client/logo.png" alt="Kmetijska zadruga Celje"><span>Za polje in gozd</span></div>
+  <div class="wrap">
+    <h2>Za polje in gozd</h2>
+    <article class="item big">
+      <img src="assets/gnojila.jpg" alt="Mineralna gnojila">
+      <div class="b">
+        <span class="cat">Nega, oskrba in varstvo rastlin</span>
+        <h3>Mineralna gnojila</h3>
+        <div class="tags"><span>UREA</span><span>KAN</span><span>NPK</span></div>
+        <p>Na zalogi. Ne odlašajte z nakupom.</p>
+        <div class="buy"><span class="price">XX,XX <small>€/vreča</small></span><span>Vojnik, Škofja vas</span></div>
+      </div>
+    </article>
+    <div class="row2">
+      <article class="item">
+        <img src="assets/gozdarska.jpg" alt="Gozdarska oprema">
+        <div class="b">
+          <span class="cat">Agrotehnika</span>
+          <h3>Gozdarska oprema</h3>
+          <p>Sekire, cepilniki, kavlji, verige, zagozde in rokavice.</p>
+          <div class="buy"><span class="price">XX,XX <small>€</small></span><span>naše trgovine</span></div>
+        </div>
+      </article>
+      <article class="item">
+        <img src="assets/drva.jpg" alt="Bukova drva">
+        <div class="b">
+          <span class="cat">Kurjava</span>
+          <h3>Bukova drva</h3>
+          <p>Drva za kurjavo. [VNESI: dobavni rok in oblika]</p>
+          <div class="buy"><span class="price">XX,XX <small>€/prm</small></span><span>[VNESI: trgovina]</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+  <div class="foot"><span>Kmetijska zadruga Celje · <b>03 425 38 00</b></span><span>Vzorčni letak: izdelki in cene so primer</span></div>
+</section>
+
+<!-- Page 3 -->
+<section class="page p3">
+  <div class="top"><img src="../img/client/logo.png" alt="Kmetijska zadruga Celje"><span>Obiščite nas</span></div>
+  <div class="wrap">
+    <h2>Za vrt in hlev</h2>
+    <div class="row2">
+      <article class="item">
+        <img src="assets/semena.jpg" alt="Semena">
+        <div class="b">
+          <span class="cat">Semena in sadike</span>
+          <h3>Semena za vrt in njivo</h3>
+          <p>Semena zelenjave, trav in poljščin. [VNESI: sorte]</p>
+          <div class="buy"><span class="price">XX,XX <small>€</small></span><span>Vojnik, Škofja vas</span></div>
+        </div>
+      </article>
+      <article class="item">
+        <img src="assets/krma.jpg" alt="Krmila">
+        <div class="b">
+          <span class="cat">Prehrana in oprema za živali</span>
+          <h3>Krmila in dodatki</h3>
+          <p>Krmila in mineralno vitaminski dodatki za rejce.</p>
+          <div class="buy"><span class="price">XX,XX <small>€</small></span><span>Vojnik, Škofja vas</span></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="stores">
+      <div class="store">
+        <h3>Kmetijska preskrba Vojnik</h3>
+        <p>Celjska cesta 24, 3212 Vojnik<br>Pon–pet <b>07:00–19:00</b>, sob <b>07:00–13:00</b><br>Tel. 03 780 48 50 · 041 427 537</p>
+      </div>
+      <div class="store">
+        <h3>Agrocenter Škofja vas</h3>
+        <p>Škofja vas 46b, 3211 Škofja vas<br>Pon–pet <b>07:30–16:00</b>, sob <b>07:30–12:00</b><br>Tel. 03 541 57 11 · 041 427 551</p>
+      </div>
+    </div>
+    <div class="signup">
+      <div>
+        <h3>Letak prvi v nabiralnik</h3>
+        <p>Prijavite se na e-pošto ali SMS in prejmite naslednji letak pred vsemi.</p>
+      </div>
+      <span class="url">nnejc.github.io/kz-celje-demo</span>
+    </div>
+  </div>
+  <div class="foot"><span>Kmetijska zadruga Celje · Kocbekova ulica 5, Celje · <b>03 425 38 00</b></span><span>Vzorčni letak: izdelki in cene so primer</span></div>
+</section>
+
+</body>
+</html>
+

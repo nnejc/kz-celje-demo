@@ -1,13 +1,13 @@
-{
+﻿{
   "current": {
     "title": "Aktualni letak",
     "validity": "[VNESI: veljavnost, npr. 6. 11. – 20. 11. 2026]",
-    "pdf": null,
+    "pdf": "letak/letak.pdf",
     "demo": true,
     "pages": [
-      { "src": "img/letak-1.webp", "alt": "Aktualni letak, stran 1 (primer)" },
-      { "src": "img/letak-2.webp", "alt": "Aktualni letak, stran 2 (primer)" },
-      { "src": "img/letak-3.webp", "alt": "Aktualni letak, stran 3 (primer)" }
+      { "src": "img/letak-1.webp", "alt": "Aktualni letak, stran 1 (vzorec)" },
+      { "src": "img/letak-2.webp", "alt": "Aktualni letak, stran 2 (vzorec)" },
+      { "src": "img/letak-3.webp", "alt": "Aktualni letak, stran 3 (vzorec)" }
     ]
   },
   "archive": [
@@ -23,3 +23,4 @@
     }
   ]
 }
+
