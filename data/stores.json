@@ -1,4 +1,4 @@
-[
+﻿[
   {
     "name": "Kmetijska preskrba Vojnik",
     "note": "Naša največja trgovina v Trgovsko-poslovnem centru Vojnik",
@@ -13,7 +13,7 @@
   },
   {
     "name": "Agrocenter Škofja vas",
-    "note": "Trgovina za kmete in vrtičkarje",
+    "note": "Trgovina v Škofji vasi",
     "address": "Škofja vas 46b, 3211 Škofja vas",
     "phones": ["041 427 551", "03 541 57 11"],
     "hours": [
@@ -35,3 +35,4 @@
     "range": []
   }
 ]
+

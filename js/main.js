@@ -34,9 +34,10 @@
     $("products").innerHTML = items.map(function (p) {
       var price = p.price != null ? Number(p.price).toFixed(2).replace(".", ",") + " €" : p.priceNote || "Cena v trgovini";
       return '<article class="card product">' +
-        (p.image ? '<img src="' + esc(p.image) + '" width="1000" height="700" loading="lazy" alt="' + esc(p.name) + '">' : "") +
+        // Images are AI illustrations for now: caption them so nobody takes them for real product photos.
+        (p.image ? '<figure class="shot"><img src="' + esc(p.image) + '" width="1000" height="700" loading="lazy" alt="' + esc(p.name) + '"><figcaption>Ilustrativna slika</figcaption></figure>' : "") +
         (p.badge ? '<span class="badge">' + esc(p.badge) + "</span>" : "") +
-        
+
         '<div class="card-body"><p class="cat">' + esc(p.category) + "</p><h3>" + esc(p.name) + "</h3>" +
         "<p>" + esc(p.description) + "</p>" +
         '<div class="meta"><span class="price">' + esc(price) + "</span><span>" + esc(p.store) + "</span></div></div></article>";
@@ -47,7 +48,8 @@
   function renderLeaflets(data) {
     var cur = data.current, pages = cur.pages || [], i = 0;
     var img = $("flyerImg"), count = $("flyerCount"), prev = $("flyerPrev"), next = $("flyerNext"), thumbs = $("flyerThumbs");
-    $("leafletValidity").textContent = cur.validity ? "Velja: " + cur.validity : "";
+    // Keep the default text from the HTML ("Veljavnost po objavi letaka.") unless a real validity is set.
+    if (cur.validity) $("leafletValidity").textContent = "Velja: " + cur.validity;
 
     function show(n) {
       i = Math.max(0, Math.min(pages.length - 1, n));
@@ -75,12 +77,16 @@
     if (cur.pdf) { pdf.href = cur.pdf; }
     else {
       pdf.setAttribute("aria-disabled", "true");
-      pdf.textContent = "Odpri PDF (kmalu)";
+      pdf.title = "Na voljo ob objavi letaka";
+      pdf.classList.add("is-disabled");
       pdf.removeAttribute("target");
       pdf.addEventListener("click", function (e) { e.preventDefault(); });
     }
 
-    $("archive").innerHTML = (data.archive || []).map(function (a) {
+    // Archive box is shown only when there are real entries.
+    var archive = (data.archive || []).filter(function (a) { return a.title; });
+    $("archiveBox").hidden = archive.length === 0;
+    $("archive").innerHTML = archive.map(function (a) {
       var t = a.pdf ? '<a href="' + esc(a.pdf) + '" target="_blank" rel="noopener">' + esc(a.title) + "</a>" : "<span>" + esc(a.title) + "</span>";
       return "<li>" + t + '<span class="date">' + esc(a.date) + "</span></li>";
     }).join("");
@@ -95,7 +101,7 @@
     $("events").innerHTML = list.map(function (e) {
       var d = new Date(e.date + "T12:00:00");
       return '<article class="event"><div class="event-date"><span class="day">' + d.getDate() + '</span><span class="mon">' + MONTHS[d.getMonth()] + "</span></div><div>" +
-        (e.demo ? '<span class="tag-demo">(primer)</span>' : "") +
+        (e.demo ? '<span class="tag-demo">Primer</span>' : "") +
         "<h3>" + esc(e.title) + "</h3><p>" + esc(e.time) + " · " + esc(e.place) + "</p><p>" + esc(e.description) + "</p></div></article>";
     }).join("");
   }
@@ -103,10 +109,11 @@
   /* ---------- Tips ---------- */
   function renderTips(items) {
     $("tips").innerHTML = items.slice(0, 3).map(function (t) {
-      var d = new Date(t.date + "T12:00:00");
-      var date = d.getDate() + ". " + (d.getMonth() + 1) + ". " + d.getFullYear();
+      // Date is optional on purpose: old dates make the site look abandoned, so the demo shows category only.
+      var date = "";
+      if (t.date) { var d = new Date(t.date + "T12:00:00"); date = '<time datetime="' + esc(t.date) + '">' + d.getDate() + ". " + (d.getMonth() + 1) + ". " + d.getFullYear() + "</time>"; }
       return '<article class="card tip">' +
-        '<div class="card-body"><span class="tag">' + esc(t.tag) + '</span><time datetime="' + esc(t.date) + '">' + date + "</time>" +
+        '<div class="card-body"><span class="tag">' + esc(t.tag) + "</span>" + date +
         '<h3>' + esc(t.title) + "</h3><p>" + esc(t.excerpt) + "</p>" +
         '<a class="link" href="' + esc(t.url) + '" target="_blank" rel="noopener">Preberi več</a></div></article>';
     }).join("");
@@ -139,7 +146,7 @@
   /* ---------- Hero panel: stores open today ---------- */
   function renderToday(items) {
     var shops = items.filter(function (s) { return s.range && s.range.length; });
-    $("today").innerHTML = "<h2>Prodajalni danes</h2>" + shops.map(function (s) {
+    $("today").innerHTML = "<h2>Prodajalne danes</h2>" + shops.map(function (s) {
       var d = new Date().getDay(), key = d === 0 ? "Nedelja" : d === 6 ? "Sobota" : "Ponedeljek – petek";
       var h = s.hours.filter(function (x) { return x.days === key; })[0];
       var open = isOpen(s.hours);
@@ -156,10 +163,29 @@
 
   /* ---------- Signup form (front-end only) ---------- */
   var form = $("signupForm");
+
+  // Carry UTM parameters (e.g. from Facebook ads) into hidden fields so signups can be attributed.
+  (function () {
+    var q = new URLSearchParams(location.search);
+    ["source", "medium", "campaign"].forEach(function (k) {
+      var el = $("utm" + k.charAt(0).toUpperCase() + k.slice(1));
+      if (el) el.value = q.get("utm_" + k) || "";
+    });
+  })();
+
+  // Clear an error as soon as the user edits the field.
+  ["email", "phone"].forEach(function (id) {
+    $(id).addEventListener("input", function () { setErr(id + "Err"); });
+  });
+  ["consentEmail", "consentSms"].forEach(function (id) {
+    $(id).addEventListener("change", function () { setErr(id + "Err"); });
+  });
+
   function setErr(id, msg) {
     var el = $(id);
     el.textContent = msg || "";
-    var input = el.previousElementSibling && el.previousElementSibling.tagName === "INPUT" ? el.previousElementSibling : null;
+    // The error text belongs to the field with the matching id (emailErr -> email) or to the checkbox before it.
+    var input = $(id.replace(/Err$/, ""));
     if (input) input.setAttribute("aria-invalid", msg ? "true" : "false");
   }
   form.addEventListener("submit", function (e) {
@@ -176,8 +202,12 @@
     if (phone && !form.consentSms.checked) bad("consentSmsErr", "Za SMS obveščanje potrdite soglasje ali izbrišite telefonsko številko.", form.consentSms);
     if (!ok) { first.focus(); return; }
 
-    // TODO (production): send { email, name, phone, consentEmail, consentSms, timestamp } to Brevo or Mailchimp here.
+    // TODO (production): send { email, name, phone, consentEmail, consentSms, utm_source, utm_medium, utm_campaign, timestamp }
+    // to Brevo or Mailchimp here (form endpoint or API via a small serverless function).
+    // Also fire the Meta Pixel "Lead" event here once the pixel is enabled in index.html.
+    var utm = { s: form.utm_source.value, m: form.utm_medium.value, c: form.utm_campaign.value };
     form.reset();
+    form.utm_source.value = utm.s; form.utm_medium.value = utm.m; form.utm_campaign.value = utm.c;
     $("formSuccess").hidden = false;
   });
 })();

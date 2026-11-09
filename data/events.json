@@ -1,26 +1,26 @@
 [
   {
     "date": "2026-11-28",
-    "time": "[VNESI: ura]",
-    "title": "Primer: predavanje o zimski oskrbi sadnega drevja",
-    "place": "[VNESI: lokacija]",
-    "description": "Vzorčni vnos za prikaz. Dogodke boste dodali z enim vnosom v datoteki events.json.",
+    "time": "ob 10:00",
+    "title": "Predavanje o zimski oskrbi sadnega drevja",
+    "place": "Kmetijska preskrba Vojnik",
+    "description": "Kako sadno drevje pripravimo na zimo. Vabljeni vsi vrtičkarji in sadjarji.",
     "demo": true
   },
   {
     "date": "2026-12-12",
-    "time": "[VNESI: ura]",
-    "title": "Primer: predpraznični dan z domačimi dobrotami",
+    "time": "ob 9:00",
+    "title": "Predpraznični dan z domačimi dobrotami",
     "place": "Kmetijska preskrba Vojnik",
-    "description": "Vzorčni vnos za prikaz. Datum, ura in opis so zgolj primer.",
+    "description": "Domače dobrote z lokalnih kmetij na enem mestu.",
     "demo": true
   },
   {
     "date": "2027-01-16",
-    "time": "[VNESI: ura]",
-    "title": "Primer: posvet za rejce govedi",
-    "place": "[VNESI: lokacija]",
-    "description": "Vzorčni vnos za prikaz. Zamenjajte z resničnim dogodkom.",
+    "time": "ob 10:00",
+    "title": "Posvet za rejce govedi",
+    "place": "Kmetijska zadruga Celje, Kocbekova ulica 5",
+    "description": "Odkup živine, oskrba rejcev in novosti v letu 2027.",
     "demo": true
   }
 ]

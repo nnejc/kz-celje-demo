@@ -1,48 +1,46 @@
-﻿[
+[
   {
     "id": "sadike-drevje",
-    "image": "img/letak/sadike.webp",
     "name": "Sadike sadnega drevja in jagodičevja",
     "category": "Semena in sadike",
     "description": "Pestra ponudba sadik sadnega drevja in jagodičevja v Kmetijski preskrbi Vojnik.",
+    "image": "img/letak/sadike.webp",
     "price": null,
-    "priceNote": "[VNESI: cena]",
+    "priceNote": "Cena v trgovini",
     "store": "Kmetijska preskrba Vojnik",
-    "badge": "Sezona"
+    "badge": null
   },
   {
     "id": "mineralna-gnojila",
-    "image": "img/letak/gnojila.webp",
     "name": "Mineralna gnojila UREA, KAN, NPK",
     "category": "Nega, oskrba in varstvo rastlin",
-    "description": "Na zalogi. Ne odlašajte z nakupom.",
+    "description": "Gnojila za travnike in njive. Za zalogo in ceno pokličite trgovino.",
+    "image": "img/letak/gnojila.webp",
     "price": null,
-    "priceNote": "[VNESI: cena]",
+    "priceNote": "Cena v trgovini",
     "store": "Vojnik in Škofja vas",
-    "badge": "Na zalogi"
+    "badge": null
   },
   {
     "id": "gozdarska-oprema",
-    "image": "img/letak/gozdarska.webp",
     "name": "Gozdarska oprema",
     "category": "Agrotehnika",
-    "description": "Sekire, cepilniki, verige, zagozde, rokavice in ostalo orodje za spravilo lesa.",
+    "description": "Sekire, cepilniki, kavlji, verige, zagozde in rokavice za spravilo lesa.",
+    "image": "img/letak/gozdarska.webp",
     "price": null,
-    "priceNote": "[VNESI: cena]",
+    "priceNote": "Cena v trgovini",
     "store": "Naše trgovine",
-    "badge": "Aktualno"
+    "badge": null
   },
   {
     "id": "bukova-drva",
-    "image": "img/letak/drva.webp",
     "name": "Bukova drva",
-    "category": "Drugo",
-    "description": "Drva za kurjavo. [VNESI: dobavni rok in oblika]",
+    "category": "Kurjava",
+    "description": "Bukova drva za kurjavo. Za ponudbo in dobavo pokličite trgovino.",
+    "image": "img/letak/drva.webp",
     "price": null,
-    "priceNote": "[VNESI: cena]",
-    "store": "[VNESI: trgovina]",
+    "priceNote": "Cena v trgovini",
+    "store": "Naše trgovine",
     "badge": null
   }
 ]
-
-
