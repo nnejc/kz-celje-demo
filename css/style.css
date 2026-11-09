@@ -279,3 +279,27 @@ h1, h2, h3 { font-weight: 700; letter-spacing: -.01em; }
 .hero-grid { width: 100%; padding-top: 72px; padding-bottom: 72px; }
 .hero-img { object-position: 60% 70%; }
 @media (min-width: 900px) { .hero-grid { padding-top: 120px; padding-bottom: 120px; } .hero { min-height: min(86vh, 820px); } }
+
+/* ---- Round 2: sample badges, captions, benefits, Facebook band ---- */
+.sample-badge { display: inline-block; vertical-align: middle; margin-left: 10px; background: var(--amber); color: #1d1405; font: 700 .78rem var(--sans); letter-spacing: 0; padding: 4px 10px; border-radius: 4px; }
+.flyer-stage .on-flyer { position: absolute; z-index: 2; top: 20px; left: 20px; margin: 0; box-shadow: 0 1px 4px rgba(0,0,0,.25); }
+.is-disabled { opacity: .55; cursor: not-allowed; pointer-events: auto; }
+.shot { position: relative; margin: 0; }
+.shot img { display: block; }
+.shot figcaption { position: absolute; left: 10px; bottom: 10px; background: rgba(20, 30, 24, .72); color: #fff; font-size: .72rem; padding: 2px 8px; border-radius: 3px; }
+.brand img { background: none; }
+.nav-fb { display: block; }
+@media (min-width: 900px) { .nav-fb { display: none; } }
+.why { margin-top: 26px; }
+.why h3 { color: #fff; font-size: 1.05rem; margin-bottom: 10px; }
+.why-list { display: grid; gap: 10px; }
+.why-list li { display: grid; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.2); border-radius: 6px; padding: 12px 14px; }
+.why-list strong { color: #f3c969; }
+.why-list span { font-size: .95rem; color: #e6efe7; }
+.fb { background: var(--cream-2); padding: 40px 0; }
+.fb-row { display: grid; gap: 16px; align-items: center; }
+.fb h2 { font-size: 1.4rem; margin-bottom: .3em; }
+.fb p { margin: 0; color: var(--muted); }
+@media (min-width: 700px) { .fb-row { grid-template-columns: 1fr auto; gap: 32px; } }
+.section-green .section-sub { color: #dcebdf; }
+.tip .tag + time { margin-left: 8px; }
